@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={yekanFont.className}>
         <div className="min-h-screen flex flex-col">
           <main className="grow bg-blue-50">{children}</main>
-          <footer className="bg-gray-200 py-2 sm:py-4 px-4 sm:px-12 w-full flex flex-col gap-2 items-center sm:flex-row justify-between text-xs">
+          <footer className="bg-gray-200 py-2 sm:py-4 px-4 sm:px-12 w-full flex flex-col gap-2 items-center sm:flex-row justify-between text-xs relative z-10">
             <div className="flex gap-4">
               {['درباره', 'تماس', 'مجله آهن', 'اخبار و مقالات'].map(text => (
                 <StyledLink key={text}>{text}</StyledLink>
