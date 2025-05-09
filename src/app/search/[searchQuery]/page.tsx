@@ -22,7 +22,7 @@ export default function SearchPage({
       <div className="bg-gray-200 shadow py-4 px-4 sm:px-20 md:px-48 flex flex-col lg:flex-row gap-4 lg:gap-0 items-center justify-between">
         <div className="lg:w-[196px]">
           <Link href="/" className="cursor-pointer">
-            <Image width={70} height={70} alt="FE26" src="/logo.jpg" />
+            <Image width={70} height={58} alt="FE26" src="/logo.jpg" />
           </Link>
         </div>
         <HeaderSearchForm />

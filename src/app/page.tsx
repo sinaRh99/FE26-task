@@ -8,7 +8,7 @@ export default function Home() {
         <HeaderNavbar />
       </div>
       <div className="flex flex-col gap-10 justify-center items-center min-h-screen w-screen absolute top-0 right-0 bg-white px-4">
-        <Image src="/logo-big.jpg" width={400} height={200} alt="FE26" />
+        <Image src="/logo-big.jpg" width={400} height={122} alt="FE26" />
         <HomeSearchForm />
         <div className="text-center">
           ما میخواهیم <br /> <span className="text-yellow-500">فضایی</span>{' '}
