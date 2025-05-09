@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 import Link from 'next/link';
+import NextTopLoader from 'nextjs-toploader';
 
 const yekanFont = localFont({
   src: './yekan.ttf',
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl">
       <body className={`${yekanFont.className} bg-white`}>
+        <NextTopLoader />
         <div className="min-h-screen flex flex-col">
           <main className="grow ">{children}</main>
           <footer className="bg-gray-200 py-2 sm:py-4 px-4 sm:px-12 w-full flex flex-col gap-2 items-center sm:flex-row justify-between text-xs relative z-10">

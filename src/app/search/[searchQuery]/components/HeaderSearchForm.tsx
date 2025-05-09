@@ -1,7 +1,7 @@
 'use client';
 
 import { Icon, Search } from '@/icons';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'nextjs-toploader/app';
 import { useState } from 'react';
 
 export default function HeaderSearchForm() {
