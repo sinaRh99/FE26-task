@@ -1,13 +1,25 @@
 import { HeaderNavbar } from '@/app/components';
 import { Icon, Search } from '@/icons';
 import Image from 'next/image';
-import React from 'react';
+import { use } from 'react';
+import { SearchResponseObject } from './components/types';
+import { SearchItem } from './components';
 
-export default function SearchPage() {
+export default function SearchPage({
+  params,
+}: {
+  params: Promise<{ searchQuery: string }>;
+}) {
+  const { searchQuery } = use(params);
+  const response = use(
+    fetch(`https://mahanman.ir/api/search?search_content=${searchQuery}`)
+  );
+  const items: { data: SearchResponseObject[] } = use(response.json());
+
   return (
-    <div>
-      <div className="h-24 bg-gray-200 shadow px-4 sm:px-20 md:px-48 flex items-center justify-between">
-        <div className="w-[196px]">
+    <div className="bg-white">
+      <div className="bg-gray-200 shadow py-4 px-4 sm:px-20 md:px-48 flex flex-col lg:flex-row gap-4 lg:gap-0 items-center justify-between">
+        <div className="lg:w-[196px]">
           <Image width={70} height={70} alt="FE26" src="/logo.jpg" />
         </div>
         <div className="bg-white border border-gray-400 rounded-full h-[36px] w-[300px] flex p-1 text-sm">
@@ -20,6 +32,11 @@ export default function SearchPage() {
           </button>
         </div>
         <HeaderNavbar />
+      </div>
+      <div className="px-4 sm:px-20 md:px-48 py-8">
+        {items.data.map(item => (
+          <SearchItem key={item.id} item={item} />
+        ))}
       </div>
     </div>
   );
