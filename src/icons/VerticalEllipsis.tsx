@@ -1,6 +1,6 @@
-import React from 'react';
+import { JSX } from 'react';
 
-export const VerticalEllipsis = () => {
+export const VerticalEllipsis = (props: JSX.ElementAttributesProperty) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +9,7 @@ export const VerticalEllipsis = () => {
       strokeWidth={1.5}
       stroke="currentColor"
       className="size-6"
+      {...props}
     >
       <path
         strokeLinecap="round"

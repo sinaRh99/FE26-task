@@ -1,4 +1,6 @@
-export const SignIn = () => {
+import { JSX } from 'react';
+
+export const SignIn = (props: JSX.ElementAttributesProperty) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -7,6 +9,7 @@ export const SignIn = () => {
       strokeWidth={1.5}
       stroke="currentColor"
       className="size-6"
+      {...props}
     >
       <path
         strokeLinecap="round"
