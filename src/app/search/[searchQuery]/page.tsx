@@ -4,6 +4,7 @@ import { use } from 'react';
 import { SearchResponseObject } from './components/types';
 import { SearchItem } from './components';
 import HeaderSearchForm from './components/HeaderSearchForm';
+import Link from 'next/link';
 
 export default function SearchPage({
   params,
@@ -20,7 +21,9 @@ export default function SearchPage({
     <div className="bg-white">
       <div className="bg-gray-200 shadow py-4 px-4 sm:px-20 md:px-48 flex flex-col lg:flex-row gap-4 lg:gap-0 items-center justify-between">
         <div className="lg:w-[196px]">
-          <Image width={70} height={70} alt="FE26" src="/logo.jpg" />
+          <Link href="/" className="cursor-pointer">
+            <Image width={70} height={70} alt="FE26" src="/logo.jpg" />
+          </Link>
         </div>
         <HeaderSearchForm />
         <HeaderNavbar />

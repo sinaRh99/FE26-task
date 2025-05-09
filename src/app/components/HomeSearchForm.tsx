@@ -35,7 +35,8 @@ export const HomeSearchForm = () => {
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-4 w-full">
         <button
           type="submit"
-          className="w-full sm:w-auto flex justify-center items-center gap-3 px-8 py-2 bg-gray-200 hover:bg-gray-300 focus:bg-gray-400 rounded-xl cursor-pointer text-center"
+          className="w-full sm:w-auto flex justify-center items-center gap-3 px-8 py-2 bg-gray-200 hover:bg-gray-300 focus:bg-gray-400 disabled:bg-gray-500 disabled:hover:bg-gray-500 disabled:cursor-not-allowed rounded-xl cursor-pointer text-center"
+          disabled={!search}
         >
           <Icon icon={Search as React.FunctionComponent} />
           جستجو

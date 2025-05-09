@@ -25,7 +25,8 @@ export default function HeaderSearchForm() {
       />
       <button
         type="submit"
-        className="bg-sky-500 hover:bg-sky-600 focus:bg-sky-700 cursor-pointer text-white w-[60px] h-full rounded-full flex items-center justify-center"
+        className="bg-sky-500 hover:bg-sky-600 focus:bg-sky-700 disabled:bg-gray-200 disabled:hover:bg-gray-200 disabled:cursor-not-allowed cursor-pointer text-white w-[60px] h-full rounded-full flex items-center justify-center"
+        disabled={!search}
       >
         <Icon icon={Search as React.FunctionComponent} />
       </button>
