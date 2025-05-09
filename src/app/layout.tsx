@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
+import Link from 'next/link';
 
 const yekanFont = localFont({
   src: './yekan.ttf',
+  weight: '400',
 });
 
 export const metadata: Metadata = {
@@ -17,8 +19,30 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={yekanFont.className}>{children}</body>
+    <html lang="fa" dir="rtl">
+      <body className={yekanFont.className}>
+        <div className="min-h-screen flex flex-col">
+          <main className="grow bg-blue-50">{children}</main>
+          <footer className="bg-gray-200 py-4 px-12 w-full flex justify-between text-xs">
+            <div className="flex gap-4">
+              {['درباره', 'تماس', 'مجله آهن', 'اخبار و مقالات'].map(text => (
+                <StyledLink key={text}>{text}</StyledLink>
+              ))}
+            </div>
+            <span>
+              کلیه حقوق مادی و معنوی این وبسایت متعلق به شرکت Fe-26 می باشد
+            </span>
+          </footer>
+        </div>
+      </body>
     </html>
   );
 }
+
+const StyledLink = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <Link href="#" className="hover:text-sky-500">
+      {children}
+    </Link>
+  );
+};
